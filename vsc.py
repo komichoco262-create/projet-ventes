@@ -66,5 +66,5 @@ plt.xlabel("ID Produit")
 plt.ylabel("CA Net (€)")
 
 # Sauvegarder l'image
-plt.savefig("graphique.png")
+plt.savefig("diagramecsv.png")
 print("Graphique généré avec succès !")
