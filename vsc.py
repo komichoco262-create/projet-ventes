@@ -58,3 +58,13 @@ plt.xlabel("Produit ID")
 plt.ylabel("CA Net")
 plt.title("Chiffre d'affaires par produit")
 plt.show()
+# Charger les données et créer le graphique
+df = pd.read_csv("ventes.csv")
+plt.bar(df['ID'].astype(str), df['Prix'], color='skyblue')
+plt.title("Chiffre d'Affaires Net par Produit")
+plt.xlabel("ID Produit")
+plt.ylabel("CA Net (€)")
+
+# Sauvegarder l'image
+plt.savefig("graphique.png")
+print("Graphique généré avec succès !")
