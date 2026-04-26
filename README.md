@@ -1,6 +1,6 @@
 # 📊 Analyse Dynamique des Ventes (Pandas & Matplotlib)
 
-**👥 Équipe : Kadi – Tes – Yas**
+**👥 Équipe : Khadija derouiche – Tesnim jebali – Yasmine troudi**
 
 Ce projet est une application Python permettant d'automatiser l'analyse de données commerciales à partir de fichiers CSV.  
 Il calcule automatiquement le chiffre d'affaires (brut et net), la TVA, et génère une visualisation graphique des performances par produit.

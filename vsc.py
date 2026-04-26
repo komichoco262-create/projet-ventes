@@ -49,7 +49,6 @@ print("Produit le plus rentable ID =", max_id)
 # =========================
 df.to_csv("resultats_final.csv", index=False)
 print("resultats_final.csv créé !")
-
 # =========================
 # 6. CRÉATION DU GRAPHIQUE
 # =========================
