@@ -6,12 +6,12 @@ import os
 import csv
 import random
 
-# =========================
+
 # 1. CREATION DU CSV (1000 lignes)
-# =========================
+
 donnees = [["ID", "Prix", "Quantite", "Remise"]]
 
-for i in range(1, 1001):  # 1000 lignes
+for i in range(1, 1034):  # 1034 lignes
     prix = round(random.uniform(5, 100), 2)       # prix entre 5 et 100
     quantite = random.randint(1, 20)              # quantité entre 1 et 20
     remise = random.choice([0, 5, 10, 15, 20])    # remise possible
@@ -24,39 +24,38 @@ with open("ventes.csv", mode="w", newline="") as file:
 
 print("ventes.csv (1000 lignes) créé !")
 
-# =========================
+
 # 2. LECTURE DU FICHIER
-# =========================
+
 if os.path.exists("ventes.csv"):
     df = pd.read_csv("ventes.csv")
 else:
     print("Fichier introuvable")
     exit()
 
-# =========================
+
 # 3. CALCULS
-# =========================
+
 df["CA_Brut"] = df["Prix"] * df["Quantite"]
 df["CA_Net"] = df["CA_Brut"] * (1 - df["Remise"] / 100)
 df["TVA"] = df["CA_Net"] * 0.2
 
-# =========================
 # 4. ANALYSE
-# =========================
+
 ca_total = df["CA_Net"].sum()
 print("CA Total =", ca_total)
 
 max_id = df.loc[df["CA_Net"].idxmax(), "ID"]
 print("Produit le plus rentable ID =", max_id)
 
-# =========================
+
 # 5. EXPORT FINAL
-# =========================
+
 df.to_csv("resultats_final.csv", index=False)
 print("resultats_final.csv créé !")
-# =========================
-# 6. CRÉATION DU GRAPHIQUE
-# =========================
+
+# 6.**** CRÉATION DU GRAPHIQUE****
+
 # 1. Charger les données depuis le fichier CSV que tu viens de créer
 df = pd.read_csv("ventes.csv")
 
