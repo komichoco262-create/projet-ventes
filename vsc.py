@@ -3,21 +3,26 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
+import csv
+import random
+
 # =========================
-# 1. CREATION DU CSV
+# 1. CREATION DU CSV (1000 lignes)
 # =========================
-donnees = [
-    ["ID", "Prix", "Quantite", "Remise"],
-    [101, 15.0, 3, 10],
-    [102, 25.0, 2, 5],
-    [103, 10.0, 5, 0]
-]
+donnees = [["ID", "Prix", "Quantite", "Remise"]]
+
+for i in range(1, 1001):  # 1000 lignes
+    prix = round(random.uniform(5, 100), 2)       # prix entre 5 et 100
+    quantite = random.randint(1, 20)              # quantité entre 1 et 20
+    remise = random.choice([0, 5, 10, 15, 20])    # remise possible
+    
+    donnees.append([100 + i, prix, quantite, remise])
 
 with open("ventes.csv", mode="w", newline="") as file:
     writer = csv.writer(file)
     writer.writerows(donnees)
 
-print("ventes.csv créé !")
+print("ventes.csv (1000 lignes) créé !")
 
 # =========================
 # 2. LECTURE DU FICHIER
