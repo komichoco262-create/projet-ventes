@@ -26,13 +26,16 @@ Il calcule automatiquement le chiffre d'affaires (brut et net), la TVA, et gén�
 
 ## 📁 Structure des données
 
-Le fichier CSV doit contenir les colonnes suivantes :
+Le fichier CSV est généré automatiquement par le programme et contient un grand nombre d’enregistrements (plus de 1000 lignes).
+
+Chaque ligne représente un produit avec les colonnes suivantes :
 
 ```bash
 ID, Prix, Quantite, Remise
-101, 15.0, 3, 10
-102, 25.0, 2, 5
-103, 10.0, 5, 0
+101, 23.5, 12, 10
+102, 78.0, 5, 0
+103, 45.2, 8, 15
+...
 * **Lecture Dynamique** : Capacité de lire et de traiter des fichiers CSV de n'importe quelle taille.
 * **Calculs Automatisés** : 
     * CA Brut (Prix * Quantité).
