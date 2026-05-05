@@ -2,8 +2,6 @@ import csv
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
-
-import csv
 import random
 
 
@@ -56,25 +54,20 @@ print("resultats_final.csv créé !")
 
 # 6.**** CRÉATION DU GRAPHIQUE****
 
-# 1. Charger les données depuis le fichier CSV que tu viens de créer
-df = pd.read_csv("ventes.csv")
 
-# 2. Configurer le graphique (on utilise astype(str) pour que les ID soient bien espacés)
+# 1. Configurer le graphique (on utilise astype(str) pour que les ID soient bien espacés)
 plt.bar(df['ID'].astype(str), df['Prix'], color='skyblue')
 
-# 3. Ajouter les textes (Titres et légendes)
+# 2. Ajouter les textes (Titres et légendes)
 plt.title("Chiffre d'Affaires Net par Produit")
 plt.xlabel("ID Produit")
 plt.ylabel("CA Net (€)")
 
-# 4. SAUVEGARDER l'image pour GitHub (C'est l'étape cruciale)
+# 3. SAUVEGARDER l'image pour GitHub (C'est l'étape cruciale)
 plt.savefig("graphique.png")
 
-# 5. Optionnel : Afficher à l'écran si tu veux le voir sur ton PC
+# 4.Afficher à l'écran si tu veux le voir sur ton PC
 plt.show()
 
 print("Fichier graphique.png généré !")
 
-# Sauvegarder l'image
-plt.savefig("diagramecsv.png")
-print("Graphique généré avec succès !")
