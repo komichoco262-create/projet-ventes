@@ -5,11 +5,11 @@ import os
 import random
 
 
-# 1. CREATION DU CSV (1000 lignes)
+# 1. CREATION DU CSV 
 
 donnees = [["ID", "Prix", "Quantite", "Remise"]]
 
-for i in range(1, 1034):  # 1034 lignes
+for i in range(1, 1034): 
     prix = round(random.uniform(5, 100), 2)       # prix entre 5 et 100
     quantite = random.randint(1, 20)              # quantité entre 1 et 20
     remise = random.choice([0, 5, 10, 15, 20])    # remise possible
