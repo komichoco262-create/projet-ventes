@@ -9,7 +9,7 @@ import random
 
 donnees = [["ID", "Prix", "Quantite", "Remise"]]
 
-for i in range(1, 1034): 
+for i in range(1, 100000): 
     prix = round(random.uniform(5, 100), 2)       # prix entre 5 et 100
     quantite = random.randint(1, 20)              # quantité entre 1 et 20
     remise = random.choice([0, 5, 10, 15, 20])    # remise possible
@@ -20,7 +20,7 @@ with open("ventes.csv", mode="w", newline="") as file:
     writer = csv.writer(file)
     writer.writerows(donnees)
 
-print("ventes.csv (1000 lignes) créé !")
+print("ventes.csv (100000 lignes) créé !")
 
 
 # 2. LECTURE DU FICHIER
@@ -55,19 +55,15 @@ print("resultats_final.csv créé !")
 # 6.**** CRÉATION DU GRAPHIQUE****
 
 
-# 1. Configurer le graphique (on utilise astype(str) pour que les ID soient bien espacés)
-plt.bar(df['ID'].astype(str), df['Prix'], color='skyblue')
+plt.figure(figsize=(10,5))
 
-# 2. Ajouter les textes (Titres et légendes)
-plt.title("Chiffre d'Affaires Net par Produit")
-plt.xlabel("ID Produit")
-plt.ylabel("CA Net (€)")
+plt.hist(df["CA_Net"], bins=30)
 
-# 3. SAUVEGARDER l'image pour GitHub (C'est l'étape cruciale)
+plt.title("Distribution du CA Net")
+plt.xlabel("CA Net")
+plt.ylabel("Frequence")
+
 plt.savefig("graphique.png")
 
-# 4.Afficher à l'écran si tu veux le voir sur ton PC
 plt.show()
-
-print("Fichier graphique.png généré !")
 
